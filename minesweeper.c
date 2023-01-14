@@ -179,7 +179,7 @@ static void setup_playfield(Minesweeper* minesweeper_state) {
     int rand_y = rand() % PLAYFIELD_HEIGHT;
     // make sure first guess isn't a mine
     if (minesweeper_state->minefield[rand_x][rand_y] == FieldEmpty &&
-       (minesweeper_state->cursor_x != rand_x && minesweeper_state->cursor_y != rand_y )) {
+       (minesweeper_state->cursor_x != rand_x || minesweeper_state->cursor_y != rand_y )) {
        minesweeper_state->minefield[rand_x][rand_y] = FieldMine;
        mines_left--;
     }
